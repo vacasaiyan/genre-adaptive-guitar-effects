@@ -1,6 +1,6 @@
 # Genre-Adaptive Guitar Multi-Effects System
 
-![System Architecture](src/utils/presentation_figures/slide1_system_overview.png)
+![System Architecture](images/system_overview.png)
 
 ## Abstract
 
@@ -44,7 +44,7 @@ This system will extracts 58 audio features from the input song and guitar signa
 
 The librosa library will be used for feature extraction for more efficient implementations that will also be suitable for any type of real-time processing.
 
-![All 58 Features](src/utils/signal_chain_viz/all_features_58.png)
+![All 58 Features](images/all_features_58.png)
 
 ## Genre Classification Model
 
@@ -66,7 +66,7 @@ The genre classfier will map 10 GTZAN datasets to 5 multi-effects presets:
 - Pop + Disco + Reggae + Hip-Hop → Pop preset
 - Classical → Clean preset
 
-![Confusion Matrix](src/utils/validation_results/confusion_matrix.png)
+![Confusion Matrix](images/confusion_matrix.png)
 
 Fig: Confusion matrix showing classification accuracy across 10 genres. Overall accuracy: 89.23%.
 
@@ -125,19 +125,23 @@ Our classifier managed to achieve greate results, particulalry for classical (98
 
 ### Feature Space Analysis
 
-![t-SNE Visualization](src/utils/validation_results/tsne_visualization.png)
+![t-SNE Visualization](images/tsne_visualization.png)
 
 Metal, classical, and hip-hop gernes have separated clusters, while blues, jazz, and rock are not so distinct, implying an overlap in their musical characterisitcs. Cluster visualization proves the effectiveness of the feature extraction methods and classifier performance.
 
 ### Signal Processing Quality
 
-![Metal Waveforms](src/utils/signal_chain_viz/Metal_waveforms.png)
+![Metal Waveforms](images/Metal_waveforms.png)
 
 This metal singal processing chain:
 - Emphasizes harmonics while at the same time not having excessive background noise.
 - A controlled dynamic range
 - V shape EQ, suitable for metal genre
 - low latency
+
+![Jazz Blues Spectrograms](images/Jazz_Blues_spectrograms.png)
+
+The Jazz/Blues preset demonstrates smooth spectral characteristics with the chorus effect adding subtle harmonic richness, warm EQ boosting low-mid frequencies for fullness, and reverb creating natural spatial depth without compromising clarity.
 
 ### Real-Time Porcessing Performance
 
